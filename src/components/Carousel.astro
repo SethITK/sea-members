@@ -1,14 +1,17 @@
 ---
 import Image from 'astro/components/Image.astro'
 import AboutPlaceholder from '../assets/aboutPlaceholder.png'
+import PromoOne from '../assets/promo_1.jpg'
+import AquaventurasPromo from '../assets/promo_2.jpg'
 import Button from './shared/Button.astro'
 import ButtonArrow from './shared/ButtonArrow.astro'
 const slides = [
   {
     brand: "Aquaventuras",
-    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae, quasi?",
+    description: "Un boleto sencillo GRATIS al mes.",
     cta: "Lee la historia de Aquaventuras",
-    href: "#"
+    href: "#",
+    image: AquaventurasPromo
   },
   {
     brand: "Bicho's",
@@ -91,12 +94,12 @@ const slides = [
 ];
 ---
 
-<div class="startup-carousel__frame px-0 mx-0 md:px-6 md:mx-8 lg:mx-32 3xl:mx-32 up-down-padding border-0 md:border-x md:border-(--border-color)">
-<section class="startup-carousel" aria-label="Startup carousel">
-  <div class="startup-carousel__header">
+<section class="startup-carousel__frame  left-right-padding up-down-padding border-0 md:border-x md:border-(--border-color)">
     <div class="prose">
         <h2 class="startup-carousel__title font-normal">La columna vertebral del comercio en Puerto Vallarta</h2>
     </div>
+<div class="startup-carousel" aria-label="Startup carousel">
+  <div class="startup-carousel__header">
     <div class="startup-carousel__controls">
       <button class="startup-carousel__button" type="button" data-prev aria-label="Anterior">
         <span aria-hidden="true">‹</span>
@@ -119,15 +122,15 @@ const slides = [
         >
           <div class="startup-carousel__card">
             <div class="startup-carousel__media">
-              <Image src={AboutPlaceholder} alt="" width={332} height={448} class="startup-carousel__media-image" draggable="false" />
+              <Image src={slide.image ?? AboutPlaceholder} alt="" width={332} height={448} class="startup-carousel__media-image" draggable="false" />
             </div>
             <div class="startup-carousel__meta">
               <p class="startup-carousel__brand">{slide.brand}</p>
               <p class="startup-carousel__copy">{slide.description}</p>
-              <a class="startup-carousel__link" href={slide.href}>
+              <!-- <a class="startup-carousel__link" href={slide.href}>
                 {slide.cta}
                 <span aria-hidden="true">›</span>
-              </a>
+              </a> -->
             </div>
           </div>
         </article>
@@ -147,8 +150,8 @@ const slides = [
       />
     ))}
   </div>
-</section>
 </div>
+</section>
 
 <script is:inline>
 (() => {
@@ -323,6 +326,11 @@ const slides = [
   --carousel-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
 }
 
+.startup-carousel__frame {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .startup-carousel {
   width: 100%;
   padding: 3rem 0;
@@ -416,14 +424,14 @@ const slides = [
 .startup-carousel__media {
   border-radius: 16px;
   overflow: hidden;
-  background: #f3f4f6;
-  aspect-ratio: 332 / 448;
+  background: #0f172a;
+  /*aspect-ratio: 332 / 448;*/
 }
 
 .startup-carousel__media-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -487,10 +495,11 @@ const slides = [
 
   .startup-carousel__track {
     width: 100%;
+    box-sizing: border-box;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding: 0 1rem;
+    /*padding: 0 1rem;*/
     transform: none !important;
     scrollbar-width: none;
   }
@@ -500,10 +509,10 @@ const slides = [
   }
 
   .startup-carousel__slide {
-    width: 85%;
-    min-width: 85%;
-    max-width: 85%;
-    flex: 0 0 85%;
+    width: 70%;
+    min-width: 70%;
+    max-width: 70%;
+    flex: 0 0 70%;
     scroll-snap-align: center;
   }
 }
