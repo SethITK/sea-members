@@ -273,8 +273,8 @@ export const lang = {
           'subText': 'Virtual card included',
         },
         '02': {
-          'before': 'Antes $1490 MXN / AÑO',
-          'newPrice': 'Previously $1,490 MXN/YEAR',
+          'before': 'Antes $1490 MXN / YEAR',
+          'newPrice': '$1299 MXN / YEAR',
           'subText': 'Physical card',
         },
       }
