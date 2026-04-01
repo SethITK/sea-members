@@ -401,7 +401,7 @@ export const lang = {
     },
     'dashboard': {
       'welcome': '¡Bienvenido',
-      'introduction': 'Muestra estos cupones al negocio para redimir los beneficios de tu membresía. Es importante tener tu tarjet virtual o física a mano.',
+      'introduction': 'Muestra estos cupones al negocio para redimir los beneficios de tu membresía. Es importante tener tu tarjeta virtual o física a mano.',
       'subtitle': 'Mis cupones',
       'coupons': {
         'notAvailable': '¡Cupón ya canjeado! Disponible nuevamente el '
